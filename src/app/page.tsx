@@ -1,6 +1,9 @@
+import Header from "@/components/layout/Header";
+
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <Header />
       <section id="mainVideoSection">
         <h1>Main Video Section</h1>
       </section>

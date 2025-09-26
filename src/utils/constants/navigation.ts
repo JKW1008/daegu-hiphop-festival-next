@@ -27,7 +27,4 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "PROGRAM", href: "/program" },
   { label: "GALLERY", href: "/gallery" },
   { label: "INFORMATION", href: "/information" },
-
-  // 특수 기능들
-  { label: "TICKETS", href: "#tickets" },
 ];
