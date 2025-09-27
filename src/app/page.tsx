@@ -1,18 +1,14 @@
+import MainVideoSection from "@/components/sections/MainVideoSection";
+
 export default function Home() {
   return (
     <main className="min-h-screen">
       <section id="mainVideoSection">
-        <h1>Main Video Section</h1>
+        <MainVideoSection />
       </section>
-      <section id="artist">
-        <h1>Artist Section</h1>
-      </section>
-      <section id="instagram">
-        <h1>Instagram Section</h1>
-      </section>
-      <section id="map">
-        <h1>Map Section</h1>
-      </section>
+      {/* <section id="artist"></section>
+      <section id="instagram"></section>
+      <section id="map"></section> */}
     </main>
   );
 }

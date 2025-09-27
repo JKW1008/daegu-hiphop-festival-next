@@ -1,1 +1,70 @@
 @import "tailwindcss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+@keyframes logoShow {
+  0% {
+    filter: blur(20px);
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes fadeInBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  70% {
+    transform: translateY(-5px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes scrollWave {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(-10px) scale(1.1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.2);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translateY(-10px) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes slideUpBounce {
+  0% {
+    transform: translateY(100px) scale(0.5);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(-15px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
