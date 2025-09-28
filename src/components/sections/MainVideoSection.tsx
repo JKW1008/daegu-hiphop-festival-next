@@ -4,6 +4,7 @@ import {useState, useEffect} from 'react';
 import SkipButton from '../ui/SkipButton';
 import AppearLogo from '../ui/AppearLogo';
 import ScrollAnimation from '../ui/ScrollAniamtion';
+import ResponsiveVideo from '../ui/ResponsiveVideo';
 
 export default function MainVideoSection() {
   const [videoEnded, setVideoEnded] = useState(false);
@@ -27,17 +28,7 @@ export default function MainVideoSection() {
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      {!isMobile && (
-        <video
-          autoPlay
-          muted
-          playsInline
-          onEnded={handleVideoEnd}
-          className="absolute top-0 left-0 w-full h-full object-cover"
-        >
-          <source src="/video/header_background_video.webm" type="video/webm" />
-        </video>
-      )}
+      <ResponsiveVideo onVideoEnd={handleVideoEnd} isMobile={isMobile} />
       <AppearLogo show={videoEnded} />
       <SkipButton
         show={!videoEnded && !isMobile}
