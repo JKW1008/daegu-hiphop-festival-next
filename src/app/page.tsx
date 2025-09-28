@@ -1,4 +1,4 @@
-import MainVideoSection from "@/components/sections/MainVideoSection";
+import MainVideoSection from '@/components/sections/MainVideoSection';
 
 export default function Home() {
   return (
@@ -6,9 +6,7 @@ export default function Home() {
       <section id="mainVideoSection">
         <MainVideoSection />
       </section>
-      {/* <section id="artist"></section>
-      <section id="instagram"></section>
-      <section id="map"></section> */}
+      <div className="h-screen bg-red-500">Test scroll area</div>
     </main>
   );
 }

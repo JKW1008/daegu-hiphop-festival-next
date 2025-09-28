@@ -1,18 +1,18 @@
 'use client';
 
 import {useState, useEffect} from 'react';
-import SkipButton from '../ui/SkipButton';
-import AppearLogo from '../ui/AppearLogo';
-import ScrollAnimation from '../ui/ScrollAniamtion';
-import ResponsiveVideo from '../ui/ResponsiveVideo';
+import SkipButton from '../ui/buttons/SkipButton';
+import AppearLogo from '../ui/logo/AppearLogo';
+import ScrollAnimation from '../ui/scroll/ScrollAnimation';
+import ResponsiveVideo from '../ui/video/ResponsiveVideo';
 
 export default function MainVideoSection() {
   const [videoEnded, setVideoEnded] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     const checkScreenSize = () => {
-      const mobile = window.innerWidth < 768;
+      const mobile = window.innerWidth < 1024;
       setIsMobile(mobile);
       setVideoEnded(mobile);
     };
@@ -20,7 +20,7 @@ export default function MainVideoSection() {
     checkScreenSize();
     window.addEventListener('resize', checkScreenSize);
     return () => window.removeEventListener('resize', checkScreenSize);
-  });
+  }, []);
 
   const handleVideoEnd = () => {
     setVideoEnded(true);
