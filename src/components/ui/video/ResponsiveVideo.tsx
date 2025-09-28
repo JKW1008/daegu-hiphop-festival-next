@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import LoadSkeleton from './LoadSkeleton';
 
 interface ResponsiveVideoProps {
   onVideoEnd: () => void;
@@ -21,11 +22,7 @@ export default function ResponsiveVideo({
   if (isMobile) return null;
   return (
     <>
-      {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black">
-          <div className="w-20 h-20 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-        </div>
-      )}
+      <LoadSkeleton isLoading={isLoading} />
       <video
         onLoadStart={handleLoadStart}
         onCanPlay={handleCanPlay}
