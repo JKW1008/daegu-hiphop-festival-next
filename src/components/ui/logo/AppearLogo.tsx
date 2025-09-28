@@ -13,7 +13,7 @@ export default function AppearLogo({ show, className }: AppearLogoProps) {
       className={`absolute top-0 left-0 w-full h-full flex justify-center items-center
       bg-black transition-opacity duration-1000 opacity-100 ${className || ``}`}
     >
-      <div className="w-3/5 md:w-2/5 lg:w-1/3 max-w-lg">
+      <div className="w-3/5 max-w-lg md:w-2/5 lg:w-1/3">
         <Image
           src="/images/header/logo.png"
           alt="Daegu Hip Hop Festival"

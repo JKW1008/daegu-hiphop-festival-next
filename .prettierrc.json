@@ -2,5 +2,7 @@
   "bracketSpacing": false,
   "singleQuote": true,
   "trailingComma": "all",
-  "arrowParens": "avoid"
+  "arrowParens": "avoid",
+  "printWidth": 80,
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

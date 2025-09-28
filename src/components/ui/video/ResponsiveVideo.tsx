@@ -31,7 +31,7 @@ export default function ResponsiveVideo({
         muted
         playsInline
         onEnded={onVideoEnd}
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 object-cover w-full h-full"
       >
         <source src="/video/header_background_video.webm" type="video/webm" />
       </video>

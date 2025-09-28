@@ -2,5 +2,14 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "editor.suggest.snippetsPreventQuickSuggestions": false
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "headwind.runOnSave": true
 }

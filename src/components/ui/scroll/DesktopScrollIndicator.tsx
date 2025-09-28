@@ -1,8 +1,26 @@
+import clsx from 'clsx';
+
 export default function DesktopScrollIndicator() {
   return (
     <div className="hidden lg:block">
-      <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center hover:border-yellow-500 hover:scale-110 transition-all duration-300 cursor-pointer group">
-        <div className="w-1 h-3 bg-white rounded-full animate-bounce mt-2 group-hover:bg-yellow-500 transition-colors duration-300"></div>
+      <div
+        className={clsx(
+          `flex h-10 w-6 justify-center border-2`,
+          `rounded-full border-white md:cursor-pointer`,
+          `md:hover:scale-110 md:hover:border-yellow-500`,
+          `group transition-all duration-300`,
+          `active:scale-95 active:border-yellow-500`,
+          `touch-manipulation select-none`,
+        )}
+      >
+        <div
+          className={clsx(
+            `mt-2 h-3 w-1 animate-bounce`,
+            `rounded-full bg-white`,
+            `transition-colors duration-300`,
+            `group-hover:bg-yellow-500`,
+          )}
+        ></div>
       </div>
     </div>
   );

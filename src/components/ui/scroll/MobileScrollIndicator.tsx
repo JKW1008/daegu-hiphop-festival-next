@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 interface MobileScrollIndicatorProps {
   isScrolling: boolean;
   shouldHide: boolean;
@@ -9,10 +11,22 @@ export default function MobileScrollIndicator({
 }: MobileScrollIndicatorProps) {
   return (
     <div
-      className={`lg:hidden flex flex-col items-center transition-all duration-500 ${isScrolling ? 'text-yellow-500' : 'text-white'} ${shouldHide ? 'opacity-0' : 'opacity-100'}`}
+      className={clsx(
+        `flex flex-col items-center transition-all`,
+        `duration-500 lg:hidden`,
+        `${isScrolling ? 'text-yellow-500' : 'text-white'}`,
+        `${shouldHide ? 'opacity-0' : 'opacity-100'}`,
+        `touch-manipulation select-none active:scale-95`,
+      )}
     >
-      <div className="w-0.5 h-12 bg-current"></div>
-      <div className="w-3 h-3 bg-current rounded-full animate-[slide-down_2s_ease-in-out_infinite] -mt-6"></div>
+      <div className="h-12 w-0.5 bg-current"></div>
+      <div
+        className={clsx(
+          `-mt-6 h-3 w-3`,
+          `animate-[slide-down_2s_ease-in-out_infinite]`,
+          `rounded-full bg-current`,
+        )}
+      ></div>
     </div>
   );
 }
