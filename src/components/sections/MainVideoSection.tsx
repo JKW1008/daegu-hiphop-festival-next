@@ -27,7 +27,7 @@ export default function MainVideoSection() {
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative h-screen w-full overflow-hidden">
       <ResponsiveVideo onVideoEnd={handleVideoEnd} isMobile={isMobile} />
       <AppearLogo show={videoEnded} />
       <SkipButton
