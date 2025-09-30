@@ -1,7 +1,7 @@
-import {useEffect, useRef, useState} from 'react';
 import DesktopScrollIndicator from './DesktopScrollIndicator';
 import MobileScrollIndicator from './MobileScrollIndicator';
 import clsx from 'clsx';
+import useScrollIndicator from '@/hooks/useScrollIndicator';
 
 interface ScrollAnimationProps {
   show: boolean;
@@ -12,28 +12,7 @@ export default function ScrollAnimation({
   show,
   className,
 }: ScrollAnimationProps) {
-  const [isScrolling, setIsScrolling] = useState(false);
-  const [shouldHide, setShouldHide] = useState(false);
-  const lastScrollYRef = useRef(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.pageYOffset;
-
-      if (scrollY > lastScrollYRef.current && scrollY > 50) {
-        setIsScrolling(true);
-        setTimeout(() => setShouldHide(true), 300);
-      } else if (scrollY < lastScrollYRef.current && scrollY <= 10) {
-        setIsScrolling(false);
-        setTimeout(() => setShouldHide(false), 300);
-      }
-      lastScrollYRef.current = scrollY;
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+  const {isScrolling, shouldHide} = useScrollIndicator();
   if (!show) return null;
 
   return (

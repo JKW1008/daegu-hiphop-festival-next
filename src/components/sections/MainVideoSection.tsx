@@ -1,39 +1,18 @@
 'use client';
 
-import {useState, useEffect} from 'react';
 import SkipButton from '../ui/buttons/SkipButton';
 import AppearLogo from '../ui/logo/AppearLogo';
 import ScrollAnimation from '../ui/scroll/ScrollAnimation';
 import ResponsiveVideo from '../ui/video/ResponsiveVideo';
+import useViewportSize from '@/hooks/useViewportSize';
 
 export default function MainVideoSection() {
-  const [videoEnded, setVideoEnded] = useState(false);
-  const [isMobile, setIsMobile] = useState(true);
-
-  useEffect(() => {
-    const checkScreenSize = () => {
-      const mobile = window.innerWidth < 1024;
-      setIsMobile(mobile);
-      setVideoEnded(mobile);
-    };
-
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
-
-  const handleVideoEnd = () => {
-    setVideoEnded(true);
-  };
-
+  const {videoEnded, isMobile, handleVideoEnd} = useViewportSize();
   return (
     <div className="relative h-screen w-full overflow-hidden">
       <ResponsiveVideo onVideoEnd={handleVideoEnd} isMobile={isMobile} />
       <AppearLogo show={videoEnded} />
-      <SkipButton
-        show={!videoEnded && !isMobile}
-        onSkip={() => setVideoEnded(true)}
-      />
+      <SkipButton show={!videoEnded && !isMobile} onSkip={handleVideoEnd} />
       <ScrollAnimation show={videoEnded} />
     </div>
   );
