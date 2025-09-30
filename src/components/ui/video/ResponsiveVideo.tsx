@@ -1,7 +1,5 @@
 import LoadSkeleton from './LoadSkeleton';
-import useNetworkOptimization from '@/hooks/useNetworkOptimization';
-import useVideoLoading from '@/hooks/useVideoLoading';
-
+import {useNetworkOptimization, useVideoLoading} from '@/hooks';
 interface ResponsiveVideoProps {
   onVideoEnd: () => void;
   isMobile: boolean;

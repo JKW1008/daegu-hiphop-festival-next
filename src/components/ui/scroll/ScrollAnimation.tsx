@@ -1,7 +1,7 @@
+import useScrollIndicator from '@/hooks/layout/useScrollIndicator';
 import DesktopScrollIndicator from './DesktopScrollIndicator';
 import MobileScrollIndicator from './MobileScrollIndicator';
 import clsx from 'clsx';
-import useScrollIndicator from '@/hooks/useScrollIndicator';
 
 interface ScrollAnimationProps {
   show: boolean;
